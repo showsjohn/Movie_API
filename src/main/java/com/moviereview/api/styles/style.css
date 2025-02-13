@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    background-color: rgb(14, 17, 24);
+    font-family: "Oswald", sans-serif;
+}
+.nav
+{
+    padding: 2rem;
+    color: rgb(230, 230, 230);
+    height: 4rem;
+}
+
+.nav #hamburger {
+    display: none;
+    transform: rotate(90deg);
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: all 500ms ease;
+}
+
+.nav hr {
+    border-color: rgba(252, 254, 255, 0.123);
+}
+
+.nav-links {
+    margin-bottom: 1rem;
+    opacity: 1;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    padding: 1rem 1rem;
+
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 5rem;
+
+}
+
+.card {
+    outline: 1px solid rgb(49, 49, 49);
+    height: 375px;
+    width: 250px;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    line-height: 1.3rem;
+    flex-shrink: 1;
+}
+
+.card .meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+}
+
+
+.card .bottom {
+    transform: translateY(79%);
+    padding: 1rem;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 1)
+    );
+
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 300ms ease, background-color 300ms ease;
+}
+
+.card:hover .bottom {
+    transform: translateY(0);
+    background-color: rgba(0, 0, 0, 0.644);
+
+}
+
+.card .bottom h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+.card .bottom .btn {
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    background-color: rgb(0, 81, 255);
+    color: rgb(238, 238, 238);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    align-self: center;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.274);
+    text-shadow: 1px 2px 2px black;
+    transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.card .card-content {
+    font-size: 0.9rem;
+}
+
+
+.card .bottom .btn:hover {
+    transform: translateY(-10%);
+}
+
+.card .bottom .btn:active {
+    background-color: white;
+    color: black;
+    text-shadow: none;
+}
+
+.card1 {
+    //background-image: url(./speed-movie-cover.jpg);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .nav {
+        width: 100%;
+        padding: 0;
+        position: relative;
+        background-color: black;
+        display:block;
+        margin-bottom: 50px;
+    }
+    .nav #hamburger {
+        display: block;
+        position: absolute;
+        color:white;
+        background-color: black;
+        border:none;
+    }
+    .nav-links{
+        position: absolute;
+        top: 50px;
+        visibility: hidden;
+        max-height: 0px;
+        opacity: 0;
+        width: 100%;;
+        padding: 2rem;
+        transform: translateY(-30%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .nav-links a {
+        position: relative;
+        width:fit-content;
+    }
+
+
+    .nav-links a::after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 80%;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: rgb(216, 215, 215);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .nav-links a:hover::after {
+        opacity: 1;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .show {
+        visibility: visible;
+        max-height: 400px;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        position: absolute;
+        width: 100vw;
+        background-color: black;
+        transform: translateY(0%);
+
+    }
+
+    .container {
+        padding: 5rem 2rem;
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 608px)
+{
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
