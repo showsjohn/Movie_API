@@ -5,7 +5,7 @@ services:
     image: mongo:latest
     container_name: local_mongo_MovieReviewer
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - ./data:/docker-entrypoint-initdb.d
       - mongo_data:/data/db

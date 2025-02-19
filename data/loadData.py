@@ -2,7 +2,7 @@ import pymongo
 import json
 from pymongo import MongoClient, InsertOne
 
-client = MongoClient("mongodb://localhost:27017/MovieReviewer")
+client = MongoClient("mongodb://localhost:27018/MovieReviewer")
 db = client.MovieReviewer
 collection = db.movie
 
