@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongo:
     image: mongo:latest
-    container_name: local_mongo
+    container_name: local_mongo_MovieReviewer
     ports:
       - "27017:27017"
     volumes:
