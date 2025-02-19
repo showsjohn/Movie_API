@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ReviewDto {
-    private int id;
+    private String id;
     private String title;
     private String content;
     private int stars;

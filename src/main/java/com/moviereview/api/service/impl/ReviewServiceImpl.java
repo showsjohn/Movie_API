@@ -26,7 +26,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewDto createReview(int movieId, ReviewDto reviewDto) {
+    public ReviewDto createReview(String movieId, ReviewDto reviewDto) {
         Review review = mapToEntity(reviewDto);
 
         Movie movie = movieRepository.findById(movieId).orElseThrow(() -> new MovieNotFoundException("movie with associated review not found"));
@@ -39,14 +39,14 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<ReviewDto> getReviewsByMovieId(int id) {
+    public List<ReviewDto> getReviewsByMovieId(String id) {
         List<Review> reviews = reviewRepository.findByMovieId(id);
 
         return reviews.stream().map(review -> mapToDto(review)).collect(Collectors.toList());
     }
 
     @Override
-    public ReviewDto getReviewById(int reviewId, int movieId) {
+    public ReviewDto getReviewById(String reviewId, String movieId) {
         Movie movie = movieRepository.findById(movieId).orElseThrow(() -> new MovieNotFoundException("Movie with associated review not found"));
 
         Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new ReviewNotFoundException("Review with associate movie not found"));
@@ -59,7 +59,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewDto updateReview(int movieId, int reviewId, ReviewDto reviewDto) {
+    public ReviewDto updateReview(String movieId, String reviewId, ReviewDto reviewDto) {
         Movie movie = movieRepository.findById(movieId).orElseThrow(() -> new MovieNotFoundException("movie with associated review not found"));
 
         Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new ReviewNotFoundException("Review with associate movie not found"));
@@ -78,7 +78,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public void deleteReview(int movieId, int reviewId) {
+    public void deleteReview(String movieId, String reviewId) {
         Movie movie = movieRepository.findById(movieId).orElseThrow(() -> new MovieNotFoundException("Movie with associated review not found"));
 
         Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new ReviewNotFoundException("Review with associated movie not found"));

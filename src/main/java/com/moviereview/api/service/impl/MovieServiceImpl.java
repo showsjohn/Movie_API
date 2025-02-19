@@ -64,13 +64,13 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public MovieDto getMovieById(int id) {
+    public MovieDto getMovieById(String id) {
         Movie movie = movieRepository.findById(id).orElseThrow(() -> new MovieNotFoundException("Movie not found!"));
         return mapToDto(movie);
     }
 
     @Override
-    public MovieDto updateMovie(MovieDto movieDto, int id) {
+    public MovieDto updateMovie(MovieDto movieDto, String id) {
       Movie movie = movieRepository.findById(id).orElseThrow(() -> new MovieNotFoundException("Movie not found! Could not be updated!"));
 
       movie.setTitle(movieDto.getTitle());
@@ -85,7 +85,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public void deleteMovie(int id) {
+    public void deleteMovie(String id) {
         try {
             movieRepository.deleteById(id);
         } catch (Exception e) {

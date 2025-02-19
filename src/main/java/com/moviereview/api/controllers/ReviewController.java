@@ -21,30 +21,30 @@ public class ReviewController {
     }
 
     @PostMapping("/movie/{movieId}/reviews")
-    public ResponseEntity<ReviewDto> createReview(@PathVariable(value = "movieId") int movieId, @RequestBody ReviewDto reviewDto) {
+    public ResponseEntity<ReviewDto> createReview(@PathVariable(value = "movieId") String movieId, @RequestBody ReviewDto reviewDto) {
         return new ResponseEntity<>(reviewService.createReview(movieId, reviewDto), HttpStatus.CREATED);
     }
 
     @GetMapping("/movie/{movieId}/reviews")
-    public List<ReviewDto> getReviewsByMovieId(@PathVariable(value = "movieId") int movieId) {
+    public List<ReviewDto> getReviewsByMovieId(@PathVariable(value = "movieId") String movieId) {
         return reviewService.getReviewsByMovieId(movieId);
     }
 
     @GetMapping("/movie/{movieId}/reviews/{id}")
-    public ResponseEntity<ReviewDto> getReviewById(@PathVariable(value = "movieId") int movieId, @PathVariable(value = "id") int reviewId) {
+    public ResponseEntity<ReviewDto> getReviewById(@PathVariable(value = "movieId") String movieId, @PathVariable(value = "id") String reviewId) {
         ReviewDto reviewDto = reviewService.getReviewById(movieId, reviewId);
         return new ResponseEntity<>(reviewDto, HttpStatus.OK);
     }
 
     @PutMapping("/movie/{movieId}/reviews/{id}")
-    public ResponseEntity<ReviewDto> updateReview(@PathVariable(value = "movieId") int movieId, @PathVariable(value = "id") int reviewId,
+    public ResponseEntity<ReviewDto> updateReview(@PathVariable(value = "movieId") String movieId, @PathVariable(value = "id") String reviewId,
                                                   @RequestBody ReviewDto reviewDto) {
         ReviewDto updatedReview = reviewService.updateReview(movieId, reviewId, reviewDto);
         return new ResponseEntity<>(updatedReview, HttpStatus.OK);
     }
 
     @DeleteMapping("/movie/{movieId}/reviews/{id}")
-    public ResponseEntity<String> deleteReview(@PathVariable(value = "movieId") int movieId, @PathVariable(value = "id") int reviewId) {
+    public ResponseEntity<String> deleteReview(@PathVariable(value = "movieId") String movieId, @PathVariable(value = "id") String reviewId) {
         reviewService.deleteReview(movieId, reviewId);
         return new ResponseEntity<>("Review deleted successfully", HttpStatus.OK);
     }

@@ -3,7 +3,7 @@ import lombok.Data;
 
 @Data
 public class MovieDto {
-    private int id;
+    private String id;
     private String title;
     private int year;
     private String description;

@@ -1,0 +1,46 @@
+[
+  {
+  "title": "28 Years Later",
+  "studio": "Sony Pictures",
+  "rating": "R",
+  "year": 2025,
+  "description": "A group of survivors of the rage virus lives on a small island. When one of the group leaves the island on a mission into the mainland, he discovers secrets, wonders, and horrors that have mutated not only the infected but other survivors.",
+  "poster": "/images/28yearslater.jpeg"
+  },
+
+  {
+    "title": "Avengers EndGame",
+    "studio": "Marvel Studios",
+    "rating": "PG-13",
+    "year": 2019,
+    "description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+    "poster": "/images/AvengersEndGame.webp"
+  },
+
+  {
+    "title": "Breaking Bad",
+    "studio": "AMC",
+    "rating": "TV-MA",
+    "year": 2008,
+    "description": "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student to secure his family's future.",
+    "poster": "/images/BreakingBad.jpg"
+  },
+
+  {
+    "title": "Lord of the Rings: The Fellowship of the Ring",
+    "studio": "New Line Cinema",
+    "rating": "PG-13",
+    "year": 2001,
+    "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron",
+    "poster": "/images/LOTR.webp"
+  },
+
+  {
+    "title": "The Matrix",
+    "studio": "Warner Brothers",
+    "rating": "R",
+    "year": 1999,
+    "description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+    "poster": "/images/Matrix.webp"
+  }
+]
