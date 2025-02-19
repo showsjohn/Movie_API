@@ -2,6 +2,15 @@
 # Movie API 
 ## A demonstration of using Spring Boot and MongoDB to create a basic API.
 ## This application uses Spring Boot and MongoDB
-### To run this project, simply clone the repo and start both the `ApiApplication` and `index.html`. The `index.html` file will require you to view file in your IDE and click `Run 'index.html' with Coverage`. You will see a few browser icons show up in the IDE, simply click which browser you wish to launch the application into.
-### This html page makes an API call to the backend and fetches the relevant movie data, and with Javascript, dynamically inserts it into the webpage.
+
+# Instructions
+### There are a few steps to running this project
+### First, clone this repo `git clone https://github.com/showsjohn/Movie_API`
+### Then, run `mvn clean install` to grab all dependencies. You may see a message regarding Lombok wanting to set annotation preprocessing, make sure to hit enable.
+### Next, use `pip3 install pymongo[srv]` to install the necessary Python package to work with MongoDB
+### Make sure you have `docker` and `docker-compose` installed
+### `docker-compose up -d --build' (use sudo if you're on Linux)
+### Now, load MongoDB with the data: `python data/loadData.py`
+### The project is now ready to run. Navigate to src/main/java/com/moviereview/api/ and run the `ApiApplication.java` file
+### The Spring server should start and you should be able to open your browser to http://localhost:8080 to view the page with the movie cards loaded. If you get any errors regarding ports being used, make sure you have no other projects running on ports 8080 or 27018. Otherwise, feel free to change these ports in the `application.properties`, `docker-compose.yml`, and `loadData.py` files
 
